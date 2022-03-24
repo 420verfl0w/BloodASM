@@ -7,6 +7,23 @@ BITS 64
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;		PSEUDO C CODE
+;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;char	*ft_hex(char *dst, char *src, size_t len)
+;{
+;	char *tmp = dst;
+;	while (len--) {
+;		*tmp++ = HEX_TAB[*src >> 4];
+;		*tmp++ = HEX_TAB[*src++ & 0xF];
+;	}
+;	*tmp = 0;
+;	return (dst);
+;}
+
 hex_tab db "0123456789abcdef", 0
 
 								; encode str in hexadecimal
