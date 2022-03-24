@@ -1,7 +1,8 @@
 BITS 64
 
-%define BUFFER_SIZE 0x1000
+% ifndef _UTILS_INC_
+% define _UTILS_INC_
 
-%include	"exit.s"
-%include	"strlen.s"
-%include	"hex.s"
+	% define BUFFER_SIZE 0x1000
+
+%endif

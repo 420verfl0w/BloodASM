@@ -5,16 +5,18 @@ SRCS =$(wildcard src/*.s)
 OBJS = $(SRCS:.s=.o)
 LD_FLAGS = -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2
 
-all: $(NAME)
+all:		$(NAME)
 
-%.o: %.s
-	$(CC) $(FLAGS) -o $@ $<
+%.o:		%.s
+			$(CC) $(FLAGS) -o $@ $<
 
-$(NAME): $(OBJS)
-	ld $(LS_FLAGS) $(OBJS) -o $(NAME)
+$(NAME):	$(OBJS)
+			ld $(LS_FLAGS) $(OBJS) -o $(NAME)
 
-clean: $(OBJS)
-	rm $^
+clean:		$(OBJS)
+			rm $^
 
-fclean: clean
-	rm $(NAME)
+fclean:		clean
+			rm $(NAME)
+
+.PHONY:		all clean fclean res
