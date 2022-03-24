@@ -1,7 +1,6 @@
 BITS 64
 
 strlen:
-		; size_t strlen(char *str);
 		push rdi 			; save rdi
 		xor rcx, rcx 		; set rcx to 0
 		not rcx 			; set -1 on rcx because scasb decrement rcx and increment rdi
