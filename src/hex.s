@@ -26,7 +26,6 @@ BITS 64
 
 hex_tab db "0123456789abcdef", 0
 
-								; encode str in hexadecimal
 to_hex:
 	sub rsp, 0x8 				; create pointer
 	mov qword [rsp], rdi		; create tmp ptr on dest buf

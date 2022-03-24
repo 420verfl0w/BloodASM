@@ -5,8 +5,8 @@ BITS 64
 section .bss
 	buf resb 256
 
-section .data
-	msg db "hello", 0
+section .data				; data initiliazed
+	msg db "hello", 0		; string hello
 
 section .text
 

@@ -15,3 +15,6 @@ $(NAME): $(OBJS)
 
 clean: $(OBJS)
 	rm $^
+
+fclean: clean
+	rm $(NAME)
