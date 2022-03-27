@@ -1,22 +1,21 @@
 BITS 64
 
-%include "putstr.s"
-%include "exit.s"
+%include "bloodasm.inc"
 
 section .bss
-	buf resb 256
-
-section .data				; data initiliazed
-	msg db "hello", 0		; string hello
+	buf resb 0x100
 
 section .text
 
 global _start
 
 _start:
-	; RSP == argc
-	; RSP + 0x8 == argv[0]
-	; RSP + ? == argv[1]
 	mov		rdi, qword [rsp + 16]
-	call	putstr
+	call	strlen
+	mov rdx, rax
+	mov rdi, buf
+	mov rsi, qword [rsp + 16]
+	call memcpy
+	mov rdi, [rax]
+	call putstr
 	jmp		_exit_succes
