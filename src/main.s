@@ -10,11 +10,9 @@ section .text
 global _start
 
 _start:
-	mov		rdi, qword [rsp + 16]
-	call	strlen
-	mov rdx, rax
+	mov rdx, 3
 	mov rdi, buf
-	mov rsi, qword [rsp + 16]
+	mov rsi, my_struct + name
 	call memcpy
 	mov rdi, [rax]
 	call putstr
